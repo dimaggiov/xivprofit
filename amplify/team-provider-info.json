@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-xivprofit-dev-235723-authRole",
+      "UnauthRoleArn": "arn:aws:iam::873599447664:role/amplify-xivprofit-dev-235723-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::873599447664:role/amplify-xivprofit-dev-235723-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-xivprofit-dev-235723-deployment",
+      "UnauthRoleName": "amplify-xivprofit-dev-235723-unauthRole",
+      "StackName": "amplify-xivprofit-dev-235723",
+      "StackId": "arn:aws:cloudformation:us-east-2:873599447664:stack/amplify-xivprofit-dev-235723/2f93ceb0-8057-11ee-a193-0a4576323e13",
+      "AmplifyAppId": "d2dgo5i1oznwlg"
+    },
+    "categories": {
+      "api": {
+        "xivprofit": {}
+      },
+      "function": {
+        "updateGCSealPrices": {
+          "deploymentBucketName": "amplify-xivprofit-dev-235723-deployment",
+          "s3Key": "amplify-builds/updateGCSealPrices-5764686d336d75694c74-build.zip"
+        }
+      }
+    }
+  }
+}

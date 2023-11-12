@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "api": {
+      "xivprofit": [
+        "Query",
+        "Mutation"
+      ]
+    },
+    "storage": {
+      "GCSealItems:@model(appsync)": [
+        "read",
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ExternalLayer",
+      "arn": "arn:aws:lambda:us-east-2:873599447664:layer:node-fetch:2"
+    }
+  ]
+}
