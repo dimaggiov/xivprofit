@@ -18,7 +18,7 @@
       "function": {
         "updateGCSealPrices": {
           "deploymentBucketName": "amplify-xivprofit-dev-235723-deployment",
-          "s3Key": "amplify-builds/updateGCSealPrices-5764686d336d75694c74-build.zip"
+          "s3Key": "amplify-builds/updateGCSealPrices-2b6b6d78354468687853-build.zip"
         }
       }
     }
