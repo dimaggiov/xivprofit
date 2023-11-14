@@ -159,8 +159,8 @@ export const getGCSealItems = /* GraphQL */ `
       yojimboSalesLast24
       zeromusMarketPrice
       zeromusSalesLast24
-      bisarcMarketPrice
-      bisarcSalesLast24
+      bismarckMarketPrice
+      bismarckSalesLast24
       ravanaMarketPrice
       ravanaSalesLast24
       sephirotMarketPrice
@@ -335,8 +335,8 @@ export const listGCSealItems = /* GraphQL */ `
         yojimboSalesLast24
         zeromusMarketPrice
         zeromusSalesLast24
-        bisarcMarketPrice
-        bisarcSalesLast24
+        bismarckMarketPrice
+        bismarckSalesLast24
         ravanaMarketPrice
         ravanaSalesLast24
         sephirotMarketPrice

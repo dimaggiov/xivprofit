@@ -161,8 +161,8 @@ type GCSealItems @model {
   yojimboSalesLast24: Int!
   zeromusMarketPrice: Int!
   zeromusSalesLast24: Int!
-  bisarcMarketPrice: Int!
-  bisarcSalesLast24: Int!
+  bismarckMarketPrice: Int!
+  bismarckSalesLast24: Int!
   ravanaMarketPrice: Int!
   ravanaSalesLast24: Int!
   sephirotMarketPrice: Int!
