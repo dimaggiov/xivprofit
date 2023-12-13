@@ -173,3 +173,4 @@ type GCSealItems @model {
   zurvanSalesLast24: Int!
 
 }
+
