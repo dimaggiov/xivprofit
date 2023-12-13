@@ -1,4 +1,4 @@
-import { listGCSealItems } from './graphql/queries'
+import { listGCSealItems } from '../graphql/queries'
 import { API, Amplify, graphqlOperation } from 'aws-amplify';
 
 let gcSealsData = {}
@@ -188,7 +188,7 @@ async function getGCSealsData() {
   }
 
 
-function GCSealsPage ()
+const GCSealsTab  = () =>
 {
   let getAllServersData = () => {
     return new Promise((resolve, reject) => {
@@ -298,4 +298,4 @@ function GCSealsPage ()
       </>);
 }
 
-export default GCSealsPage;
+export default GCSealsTab;
