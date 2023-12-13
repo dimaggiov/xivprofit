@@ -1,7 +1,9 @@
 import { listGCSealItems } from '../graphql/queries'
 import { API, Amplify, graphqlOperation } from 'aws-amplify';
+import '../App.css';
 
 let gcSealsData = {}
+let currentServer = '';
 
 async function getGCSealsData() {
     try {
@@ -20,8 +22,6 @@ async function getGCSealsData() {
   let tableSortOrder = 'asc'
   //param: tells which collumn to sort by, 0 - name, 1 - cost, 2 - selling price, 3 - gil/seal, 4 - sales last 24
   function sortTable(collumn) {
-  
-    var server = document.getElementById("servers").value
   
     switch (collumn) {
       case 0: //sort by name
@@ -82,10 +82,10 @@ async function getGCSealsData() {
       if (tableSortOrder == 'asc') {
         tableSortOrder = 'dsc'
         gcSealsData.data.listGCSealItems['items'].sort((a, b) => {
-          if (a[server+ 'MarketPrice'] > b[server+ 'MarketPrice']) {
+          if (a[currentServer+ 'MarketPrice'] > b[currentServer+ 'MarketPrice']) {
             return 1;
           }
-          if (a[server+ 'MarketPrice'] < b[server+ 'MarketPrice']) {
+          if (a[currentServer+ 'MarketPrice'] < b[currentServer+ 'MarketPrice']) {
             return -1;
           }
           return 0;
@@ -94,10 +94,10 @@ async function getGCSealsData() {
       else {
         tableSortOrder = 'asc'
         gcSealsData.data.listGCSealItems['items'].sort((a, b) => {
-          if (a[server+ 'MarketPrice'] < b[server+ 'MarketPrice']) {
+          if (a[currentServer+ 'MarketPrice'] < b[currentServer+ 'MarketPrice']) {
             return 1;
           }
-          if (a[server+ 'MarketPrice'] > b[server+ 'MarketPrice']) {
+          if (a[currentServer+ 'MarketPrice'] > b[currentServer+ 'MarketPrice']) {
             return -1;
           }
           return 0;
@@ -108,10 +108,10 @@ async function getGCSealsData() {
       if(tableSortOrder == 'asc'){
         tableSortOrder = 'dsc'
         gcSealsData.data.listGCSealItems['items'].sort((a, b) => {
-          if (a[server + 'MarketPrice'] / a['costToBuy'] > b[server + 'MarketPrice'] / b['costToBuy']) {
+          if (a[currentServer + 'MarketPrice'] / a['costToBuy'] > b[currentServer + 'MarketPrice'] / b['costToBuy']) {
             return 1;
           }
-          if (a[server + 'MarketPrice'] / a['costToBuy'] < b[server + 'MarketPrice'] / b['costToBuy']) {
+          if (a[currentServer + 'MarketPrice'] / a['costToBuy'] < b[currentServer + 'MarketPrice'] / b['costToBuy']) {
             return -1;
           }
           return 0;
@@ -120,10 +120,10 @@ async function getGCSealsData() {
       else{
         tableSortOrder = 'asc'
         gcSealsData.data.listGCSealItems['items'].sort((a, b) => {
-        if (a[server + 'MarketPrice'] / a['costToBuy'] < b[server + 'MarketPrice'] / b['costToBuy']) {
+        if (a[currentServer + 'MarketPrice'] / a['costToBuy'] < b[currentServer + 'MarketPrice'] / b['costToBuy']) {
           return 1;
         }
-        if (a[server + 'MarketPrice'] / a['costToBuy'] > b[server + 'MarketPrice'] / b['costToBuy']) {
+        if (a[currentServer + 'MarketPrice'] / a['costToBuy'] > b[currentServer + 'MarketPrice'] / b['costToBuy']) {
           return -1;
         }
         return 0;
@@ -135,10 +135,10 @@ async function getGCSealsData() {
       if (tableSortOrder == 'asc') {
         tableSortOrder = 'dsc'
         gcSealsData.data.listGCSealItems['items'].sort((a, b) => {
-          if (a[server+ 'SalesLast24'] > b[server+ 'SalesLast24']) {
+          if (a[currentServer+ 'SalesLast24'] > b[currentServer+ 'SalesLast24']) {
             return 1;
           }
-          if (a[server+ 'SalesLast24'] < b[server+ 'SalesLast24']) {
+          if (a[currentServer+ 'SalesLast24'] < b[currentServer+ 'SalesLast24']) {
             return -1;
           }
           return 0;
@@ -147,10 +147,10 @@ async function getGCSealsData() {
       else {
         tableSortOrder = 'asc'
         gcSealsData.data.listGCSealItems['items'].sort((a, b) => {
-          if (a[server+ 'SalesLast24'] < b[server+ 'SalesLast24']) {
+          if (a[currentServer+ 'SalesLast24'] < b[currentServer+ 'SalesLast24']) {
             return 1;
           }
-          if (a[server+ 'SalesLast24'] > b[server+ 'SalesLast24']) {
+          if (a[currentServer+ 'SalesLast24'] > b[currentServer+ 'SalesLast24']) {
             return -1;
           }
           return 0;
@@ -164,15 +164,14 @@ async function getGCSealsData() {
   }
   
   function buildTable() {
-    var server = document.getElementById("servers").value
     var tableOfItems = ''
     gcSealsData.data['listGCSealItems']['items'].forEach(element => {
       tableOfItems = tableOfItems.concat('<tr>')
       tableOfItems = tableOfItems.concat('<td>', element['name'], '</td>')
       tableOfItems = tableOfItems.concat('<td>', element['costToBuy'], '</td>')
-      tableOfItems = tableOfItems.concat('<td>', element[server + 'MarketPrice'], '</td>')
-      tableOfItems = tableOfItems.concat('<td>', (element[server + 'MarketPrice'] / element['costToBuy']).toFixed(2), '</td>')
-      tableOfItems = tableOfItems.concat('<td>', element[server + 'SalesLast24'], '</td>')
+      tableOfItems = tableOfItems.concat('<td>', element[currentServer + 'MarketPrice'], '</td>')
+      tableOfItems = tableOfItems.concat('<td>', (element[currentServer + 'MarketPrice'] / element['costToBuy']).toFixed(2), '</td>')
+      tableOfItems = tableOfItems.concat('<td>', element[currentServer + 'SalesLast24'], '</td>')
       tableOfItems = tableOfItems.concat('</tr>')
     });
     document.getElementById("pricesTableBody").innerHTML = tableOfItems;
@@ -181,10 +180,10 @@ async function getGCSealsData() {
   
   function getPriceForServer() //called when button is pressed
   {
-    if(document.getElementById("pricesTableBody").innerHTML === "")
-    {
-      sortTable(2)// sort table by price, also creates table
-    }
+    document.getElementById("sealsTHead").style = {display: 'block'}
+    currentServer = document.getElementById("servers").value;
+    sortTable(2)// sort table by price, also creates table
+    
   }
 
 
@@ -283,8 +282,8 @@ const GCSealsTab  = () =>
           <option value="zodiark">Zodiark</option>
         </select>
         <button onClick={getPriceForServer}>GetPrices</button>
-        <table id="pricesTable" name="pricesTable" class="sortable">
-          <thead>
+        <table className="generalTable" id="pricesTable" name="pricesTable">
+          <thead id="sealsTHead" style={{display:'none'}}> 
             <tr>
               <th onClick={() => sortTable(0)}>Item</th>
               <th onClick={() => sortTable(1)}>Cost</th>

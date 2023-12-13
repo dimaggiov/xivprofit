@@ -11,7 +11,7 @@ const Tabs = ({ tabs, defaultTab, children }) => {
     <div>
       <div>
         {tabs.map((tab) => (
-          <button
+          <button className ='tabButton'
             key={tab}
             onClick={() => handleTabClick(tab)}
             style={{ fontWeight: tab === activeTab ? 'bold' : 'normal' }}

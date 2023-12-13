@@ -7,6 +7,31 @@
   pointer-events: none;
 }
 
+
+.tabButton {
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:linear-gradient(to bottom, #a19bd1 5%, #637096 100%);
+	background-color:#a19bd1;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:2vmin;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+}
+.tabButton:hover {
+	background:linear-gradient(to bottom, #637096 5%, #a19bd1 100%);
+	background-color:#637096;
+}
+.tabButton:active {
+	position:relative;
+	top:1px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -15,12 +40,12 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 3vmin);
+  font-weight: bold;
   color: white;
 }
 
@@ -28,11 +53,20 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-body {
+  font-size:calc(3px + 2vmin);
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #282c34;
+  min-height: 100vb;
+  color: white;
 }
+
+.generalTable {
+  font-size: 3vmin;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  user-select: none;
+}
+
