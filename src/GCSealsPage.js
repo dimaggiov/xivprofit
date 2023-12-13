@@ -6,7 +6,7 @@ let gcSealsData = {}
 async function getGCSealsData() {
     try {
       const data = await API.graphql(graphqlOperation(listGCSealItems))
-      gcSealsData = data
+      return data
     } 
     catch (err) {
       console.log('error fetching data')
@@ -18,6 +18,7 @@ async function getGCSealsData() {
 
   //memory of if table should sort collumn ascending or decending, will swap when run
   let tableSortOrder = 'asc'
+  //param: tells which collumn to sort by, 0 - name, 1 - cost, 2 - selling price, 3 - gil/seal, 4 - sales last 24
   function sortTable(collumn) {
   
     var server = document.getElementById("servers").value
@@ -178,15 +179,26 @@ async function getGCSealsData() {
   }
   
   
-  async function getPriceForServer() //called when button is pressed
+  function getPriceForServer() //called when button is pressed
   {
-    await getGCSealsData();
-    sortTable(2)// sort table by price, also creates table
+    if(document.getElementById("pricesTableBody").innerHTML === "")
+    {
+      sortTable(2)// sort table by price, also creates table
+    }
   }
 
 
 function GCSealsPage ()
 {
+  let getAllServersData = () => {
+    return new Promise((resolve, reject) => {
+      resolve(getGCSealsData());
+    });
+  }
+  getAllServersData().then((result) => {
+    gcSealsData = result
+  })
+
       return (
       <>
       <h1>GC Seal Market</h1>
