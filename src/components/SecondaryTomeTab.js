@@ -199,7 +199,6 @@ const SecondaryTomeTab = () => {
     }
     getAllServersData().then((result) => {
         secondaryTomeData = result
-        console.log(secondaryTomeData)
     })
 
 
