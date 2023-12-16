@@ -33,6 +33,12 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "updateSecondaryTomePrices": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -51,6 +57,23 @@
           "resourceName": "updateGCSealPrices"
         }
       ]
+    },
+    "AMPLIFY_function_updateSecondaryTomePrices_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateSecondaryTomePrices"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateSecondaryTomePrices_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateSecondaryTomePrices"
+        }
+      ]
     }
-  }
+  },
+  "storage": {}
 }

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "api": {
+      "xivprofit": [
+        "Query",
+        "Mutation"
+      ]
+    },
+    "storage": {
+      "SecondaryTomeItems:@model(appsync)": [
+        "read",
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
