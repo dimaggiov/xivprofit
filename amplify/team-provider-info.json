@@ -23,6 +23,10 @@
         "updateSecondaryTomePrices": {
           "deploymentBucketName": "amplify-xivprofit-dev-235723-deployment",
           "s3Key": "amplify-builds/updateSecondaryTomePrices-53424f4f30506f773143-build.zip"
+        },
+        "updatePoeticPrices": {
+          "deploymentBucketName": "amplify-xivprofit-dev-235723-deployment",
+          "s3Key": "amplify-builds/updatePoeticPrices-2f714b594c4a3439454f-build.zip"
         }
       }
     }

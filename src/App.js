@@ -4,14 +4,15 @@ import awsExports from './aws-exports'
 import Tabs from './components/Tabs'
 import GCSealsTab from './components/GCSealsTab'
 import SecondaryTomeTab from './components/SecondaryTomeTab'
-
+import PoeticsTab from './components/PoeticsTab'
 import './App.css';
+
 
 
 
 Amplify.configure(awsExports)
 
-const tabs = ['GC Seals', 'Causality Tomes']
+const tabs = ['GC Seals', 'Causality Tomes', 'Poetics']
 
 function App() {
 
@@ -25,6 +26,9 @@ function App() {
           </div>
           <div label={tabs[1]}>
             <SecondaryTomeTab />
+          </div>
+          <div label={tabs[2]}>
+            <PoeticsTab />
           </div>
         </Tabs>
       </div>

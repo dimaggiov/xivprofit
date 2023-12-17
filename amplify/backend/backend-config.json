@@ -34,6 +34,12 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "updatePoeticPrices": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "updateSecondaryTomePrices": {
       "build": true,
       "dependsOn": [],
@@ -55,6 +61,22 @@
         {
           "category": "function",
           "resourceName": "updateGCSealPrices"
+        }
+      ]
+    },
+    "AMPLIFY_function_updatePoeticPrices_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updatePoeticPrices"
+        }
+      ]
+    },
+    "AMPLIFY_function_updatePoeticPrices_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updatePoeticPrices"
         }
       ]
     },
