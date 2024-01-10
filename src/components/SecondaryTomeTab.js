@@ -13,7 +13,6 @@ async function getSecondaryTomeData() {
     }
     catch (err) {
         console.log('error fetching data')
-        console.log(err)
     }
 }
 

@@ -70,3 +70,27 @@
   user-select: none;
 }
 
+table.generalTable {
+  align-items: center;
+}
+table.generalTable td, table.generalTable th {
+  border: 2px solid #494949;
+  padding: 3px 20px;
+}
+table.generalTable tbody td {
+  font-size: 21px ;
+  color: #FFFFFF;
+}
+table.generalTable tr:nth-child(even) {
+  background: #283234;
+}
+table.generalTable thead {
+  background: #2A2834;
+}
+table.generalTable thead th {
+  font-size: 3vmin;
+  font-weight: bold;
+  color: #FFFFFF;
+  align-items: center;
+}
+

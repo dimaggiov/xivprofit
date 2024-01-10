@@ -12,7 +12,6 @@ async function getGCSealsData() {
     } 
     catch (err) {
       console.log('error fetching data')
-      console.log(err)
     }
   }
 
