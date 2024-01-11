@@ -9,27 +9,31 @@
 
 
 .tabButton {
-	box-shadow:inset 0px 1px 3px 0px #91b8b3;
-	background:linear-gradient(to bottom, #a19bd1 5%, #637096 100%);
-	background-color:#a19bd1;
-	border-radius:5px;
-	border:1px solid #566963;
-	display:inline-block;
-	cursor:pointer;
-	color:#000000;
-	font-family:Arial;
-	font-size:2vmin;
-	font-weight:bold;
-	padding:11px 23px;
-	text-decoration:none;
+  background: #000000;
+  background-image: -webkit-linear-gradient(top, #000000, #0c2244);
+  background-image: -moz-linear-gradient(top, #000000, #0c2244);
+  background-image: -ms-linear-gradient(top, #000000, #0c2244);
+  background-image: -o-linear-gradient(top, #000000, #0c2244);
+  background-image: linear-gradient(to bottom, #000000, #0c2244);
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #26333b 2px;
+  text-decoration: none;
 }
+
 .tabButton:hover {
-	background:linear-gradient(to bottom, #637096 5%, #a19bd1 100%);
-	background-color:#637096;
-}
-.tabButton:active {
-	position:relative;
-	top:1px;
+  background: #1453b3;
+  background-image: -webkit-linear-gradient(top, #08367a, #000000);
+  background-image: -moz-linear-gradient(top, #08367a, #000000);
+  background-image: -ms-linear-gradient(top, #08367a, #000000);
+  background-image: -o-linear-gradient(top, #08367a, #000000);
+  background-image: linear-gradient(to bottom, #08367a, #000000);
+  text-decoration: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {

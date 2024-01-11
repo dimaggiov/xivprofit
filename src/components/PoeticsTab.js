@@ -203,8 +203,8 @@ const PoeticsTab = () => {
 
     return (
         <>
-            <h1>Poetics</h1>
-            <label for="servers">Select a server:</label>
+            <h1>Poetics Market</h1>
+            <label for="servers">Select a server:  </label>
             <select id="servers" name="servers">
                 <option value="adamantoise">Adamantoise</option>
                 <option value="aegis">Aegis</option>
@@ -284,7 +284,7 @@ const PoeticsTab = () => {
                 <option value="zeromus">Zeromus</option>
                 <option value="zodiark">Zodiark</option>
             </select>
-            <button onClick={getPriceForServer}>GetPrices</button>
+            <br></br><button onClick={getPriceForServer}>Get Prices</button>
             <table className="generalTable" id="pricesTable" name="pricesTable">
                 <thead id="sealsTHead" style={{ display: 'none' }}>
                     <tr>

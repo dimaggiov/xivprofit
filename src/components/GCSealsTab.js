@@ -200,7 +200,7 @@ const GCSealsTab  = () =>
       return (
       <>
       <h1>GC Seal Market</h1>
-        <label for="servers">Select a server:</label>
+        <label for="servers">Select a server:  </label>
         <select id="servers" name="servers">
           <option value="adamantoise">Adamantoise</option>
           <option value="aegis">Aegis</option>
@@ -280,7 +280,7 @@ const GCSealsTab  = () =>
           <option value="zeromus">Zeromus</option>
           <option value="zodiark">Zodiark</option>
         </select>
-        <button onClick={getPriceForServer}>GetPrices</button>
+        <br></br><button onClick={getPriceForServer}>Get Prices</button>
         <table className="generalTable" id="pricesTable" name="pricesTable">
           <thead id="sealsTHead" style={{display:'none'}}> 
             <tr>
